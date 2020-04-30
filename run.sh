@@ -1,2 +1,2 @@
 # Echo Command
-$src/consumer_complaints.py
+python3 consumer_complaints.py
