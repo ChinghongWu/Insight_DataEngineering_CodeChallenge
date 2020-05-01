@@ -6,7 +6,8 @@ Created on Wed Apr 29 13:07:29 2020
 """
 import csv 
 import itertools
-import urllib
+import urllib.request
+from io import StringIO
 
 #Read input data from local csv file
 #with open(r"C:\Users\Ching\Documents\complaints.csv", 'r', newline='', encoding = 'utf-8') as csvfile:
@@ -16,13 +17,36 @@ import urllib
 #        data.append(row)
 #    data = data[1:]
 
-#Read input data from GitHub csv file 
-data_file = urllib.request.urlopen("https://github.com/ChinghongWu/Insight_DataEngineering_CodeChallenge/tree/master/input/complaints.csv").read()
-data_obj = csv.reader(data_file, delimiter=',',quotechar='"')
-data = []
-for row in data_obj:
-    data.append(row)
-    data = data[1:]    
+#Read csv from url
+#data = []
+#url = "https://raw.githubusercontent.com/ChinghongWu/Insight_DataEngineering_CodeChallenge/master/input/complaints.csv"
+#response = urllib.request.urlopen(url) 
+#
+#de = response.read().decode('utf-8')
+#dataFile=StringIO(de)
+#cr=csv.reader(dataFile)
+#data = [row for row in cr]
+#data = data[1:] 
+#
+#data = []
+#url = "https://raw.githubusercontent.com/ChinghongWu/Insight_DataEngineering_CodeChallenge/master/input/complaints.csv"
+#with urllib.request.urlopen(url) as response, open ('data_temp.csv','w') as f:
+#    f.write(response.read().decode('utf-8'))
+#    cr = csv.reader('data_temp.csv', delimiter=',',quotechar='"')
+#data = list(cr)
+#data = data[1:]
+
+input_path = "../input/complaints.csv"
+output_path = "../output/report.csv"
+
+with open(input_path, 'r', newline='', encoding = 'utf-8') as csvfile:
+    data_obj = csv.reader(csvfile, delimiter=',',quotechar='"')
+    data = []
+    for row in data_obj:
+        data.append(row)
+    data = data[1:]
+
+
 
 
 #sort data according to accending order of time and alphabetic order of product name
@@ -40,7 +64,7 @@ company_unique = list(set(company))
 
 
 
-#Method 3
+#Method 3s
 report3 = []
 dataSubset = []
 CompanyList = []
@@ -100,8 +124,10 @@ while j < len(report3):
         j+=1       
 
 
-
-
+#upload report as a csv file to GitHub top most output directory 
+with open(output_path, 'r', newline='', encoding = 'utf-8') as csvfile:
+    output = csv.writer(output_path, delimiter=',',quotechar='"')
+    output.writerow(report3)
 
 
 ##Method 1
@@ -146,7 +172,6 @@ while j < len(report3):
 ##                    total num of complaints, total num of companies receiving complaints 
 ##                    highest percentage of total complaints filed against one company 
 ##Sort lines in out file in ascending year and alphabatically by product
-
 
 
 
