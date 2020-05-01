@@ -9,35 +9,8 @@ import itertools
 import urllib.request
 from io import StringIO
 
-#Read input data from local csv file
-#with open(r"C:\Users\Ching\Documents\complaints.csv", 'r', newline='', encoding = 'utf-8') as csvfile:
-#    data_obj = csv.reader(csvfile, delimiter=',',quotechar='"')
-#    data = []
-#    for row in data_obj:
-#        data.append(row)
-#    data = data[1:]
-
-#Read csv from url
-#data = []
-#url = "https://raw.githubusercontent.com/ChinghongWu/Insight_DataEngineering_CodeChallenge/master/input/complaints.csv"
-#response = urllib.request.urlopen(url) 
-#
-#de = response.read().decode('utf-8')
-#dataFile=StringIO(de)
-#cr=csv.reader(dataFile)
-#data = [row for row in cr]
-#data = data[1:] 
-#
-#data = []
-#url = "https://raw.githubusercontent.com/ChinghongWu/Insight_DataEngineering_CodeChallenge/master/input/complaints.csv"
-#with urllib.request.urlopen(url) as response, open ('data_temp.csv','w') as f:
-#    f.write(response.read().decode('utf-8'))
-#    cr = csv.reader('data_temp.csv', delimiter=',',quotechar='"')
-#data = list(cr)
-#data = data[1:]
-
 input_path = "../input/complaints.csv"
-output_path = "../output/report.csv"
+output_path = "../output/ "
 
 with open(input_path, 'r', newline='', encoding = 'utf-8') as csvfile:
     data_obj = csv.reader(csvfile, delimiter=',',quotechar='"')
@@ -130,48 +103,6 @@ with open(output_path, 'r', newline='', encoding = 'utf-8') as csvfile:
     output.writerow(report3)
 
 
-##Method 1
-#report = []
-#for i in itertools.product(product_unique, year_unique):
-#    report.append(i)
-#
-##Get total number of complaints received for each product and each year
-#n = 0
-#for i,j in (report): 
-#    report[n] = report[n] + (sum(1 for x in data if x[1]==i and x[0].split('-')[0]==j),)
-#    n = n + 1
-#
-##Get the number of companies receiving the complaints for each product each year
-#n = 0
-#curListOfComp = [] 
-#for i,j,k in (report):
-#    numOfComp = 0
-#    for y in data: 
-#        if y[1]==i and y[0].split('-')[0]==j and y[7] not in curListOfComp:
-#            curListOfComp.append(y[7])
-#            numOfComp += 1
-#    report[n] = report[n] + (numOfComp,)
-#    n+=1
-#    print(0)
-#
-#
-##Get the highest percentage of complaints directed at a single comapny per product and per year
-#n=0
-#for i,j,k,l in (report):
-#    CompDict = {}
-#    for m in range(len(company_unique)):
-#        CompDict[company_unique[m]] = 0 
-#    for z in data:
-#        if z[1]==i and z[0].split('-')[0]==j:   #this is not evaluated
-#            CompDict[z[7]] = CompDict[z[7]]+1
-#    CompDict_S = sorted(CompDict.items(), key=lambda x: x[1], reverse=True)      
-#    report[n] = report[n] + (CompDict_S[0][1],)
-#    n+=1
-##Output file: list unique pairs of product and year 
-##Each line includes: product, year, 
-##                    total num of complaints, total num of companies receiving complaints 
-##                    highest percentage of total complaints filed against one company 
-##Sort lines in out file in ascending year and alphabatically by product
 
 
 
