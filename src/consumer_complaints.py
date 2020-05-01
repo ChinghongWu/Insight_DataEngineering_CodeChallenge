@@ -10,7 +10,7 @@ import urllib.request
 from io import StringIO
 
 input_path = "../input/complaints.csv"
-output_path = "../output/ "
+output_path = "../output/report.csv "
 
 with open(input_path, 'r', newline='', encoding = 'utf-8') as csvfile:
     data_obj = csv.reader(csvfile, delimiter=',',quotechar='"')
@@ -98,7 +98,7 @@ while j < len(report3):
 
 
 #upload report as a csv file to GitHub top most output directory 
-with open(output_path, 'r', newline='', encoding = 'utf-8') as csvfile:
+with open(output_path, 'w', newline='', encoding = 'utf-8') as csvfile:
     output = csv.writer(output_path, delimiter=',',quotechar='"')
     output.writerow(report3)
 
