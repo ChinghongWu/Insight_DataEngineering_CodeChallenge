@@ -10,8 +10,8 @@ The consumer_complaints.py file stored in ./src is the main source code for proc
 
 ## Approach:
 The approach I used for processing the compliants data is:
-*Parse all data into data subsets grouped by product-year pair, so that each subset contains data records of 1 specific product and year
-*Count number of compliants of 1 specific product and year by counting the length of data subset
-*Count total number of companies of 1 specific product and year by counting the length of unique list of companies in subset
-*Count top percentage of complaints of 1 specific product and year by counting complaints for each companies in subset, dividing by total complaints, and sorting by percentage of complaints
+* Parse all data into data subsets grouped by product-year pair, so that each subset contains data records of 1 specific product and year
+* Count number of compliants of 1 specific product and year by counting the length of data subset
+* Count total number of companies of 1 specific product and year by counting the length of unique list of companies in subset
+* Count top percentage of complaints of 1 specific product and year by counting complaints for each companies in subset, dividing by total complaints, and sorting by percentage of complaints
 
