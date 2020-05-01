@@ -9,7 +9,7 @@ import itertools
 
 #local path for testing
 #input_path = "C:/Users/Ching/Documents/complaints.csv"
-#output_path = "C:/Users/Ching/Documents/report.csv "
+#output_path = "C:/Users/Ching/Documents/report.csv"
 
 input_path = "../input/complaints.csv"
 output_path = "../output/report.csv "
