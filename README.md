@@ -2,7 +2,7 @@
 This repo is dedicated to the Insight Fellowship program, focusing on development,testing for the code challenge
 
 ## Shell Script: run.sh 
-The run.sh file store in top level of repo is the shell script for executing consumer_complaints.py file
+The run.sh file store in top level of repo is the shell script for executing consumer_complaints.py file. 
 It passes two parameters to python file: input path, output path 
 
 ## Source code: consumer_complaints.py
