@@ -6,13 +6,23 @@ Created on Wed Apr 29 13:07:29 2020
 """
 import csv 
 import itertools
+import sys
 
 #local path for testing
 #input_path = "C:/Users/Ching/Documents/complaints.csv"
-#output_path = "C:/Users/Ching/Documents/report.csv"
+#output_path = "C:/Users/Ching/Documents/report.csv "
 
-input_path = "../input/complaints.csv"
-output_path = "../output/report.csv "
+#Github directory path for testing 
+try:
+    input_path = sys.argv[1]
+except:
+    input_path = "../input/complaints.csv"
+
+try:
+    output_path = sys.argv[2]
+except:
+    output_path = "../output/report.csv"
+
 
 with open(input_path, 'r', newline='', encoding = 'utf-8') as csvfile:
     data_obj = csv.reader(csvfile, delimiter=',',quotechar='"')
