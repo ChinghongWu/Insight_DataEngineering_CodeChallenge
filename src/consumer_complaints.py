@@ -122,7 +122,7 @@ for row in report_output:
 #upload report as a csv file to GitHub top most output directory 
 with open(output_path, 'w', newline='') as csvfile:
     output = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
-    output.writerows(report3)   
+    output.writerows(report_output)   
 
 
 
