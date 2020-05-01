@@ -98,8 +98,8 @@ while j < len(report3):
 
 
 #upload report as a csv file to GitHub top most output directory 
-with open(output_path, 'w', newline='', encoding = 'utf-8') as csvfile:
-    output = csv.writer(csvfile, delimiter=',',quotechar='"')
+with open(output_path, 'w', newline='') as csvfile:
+    output = csv.writer(csvfile)
     output.writerow(report3)
 
 
