@@ -103,10 +103,12 @@ while j < len(report3):
         report3.remove(report3[j])
     else:
         j+=1       
-
+        
+#Structure report format to 2d list, sorted alphabetically and in ascending year
 report_output = []
 for row in report3:
     report_output.append(list(row))
+report_output.sort(key=lambda x: (x[0], x[1]))
 
 #upload report as a csv file to GitHub top most output directory 
 with open(output_path, 'w', newline='') as csvfile:
