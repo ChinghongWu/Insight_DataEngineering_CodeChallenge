@@ -113,6 +113,8 @@ report_output.sort(key=lambda x: (x[0], x[1]))
 #covert from year column from string to int
 for row in report_output:
     row[1] = int(row[1])
+    row[0] = row[0].lower()
+
 
 
 
