@@ -6,8 +6,10 @@ Created on Wed Apr 29 13:07:29 2020
 """
 import csv 
 import itertools
-import urllib.request
-from io import StringIO
+
+#local path for testing
+#input_path = "C:/Users/Ching/Documents/complaints.csv"
+#output_path = "C:/Users/Ching/Documents/report.csv "
 
 input_path = "../input/complaints.csv"
 output_path = "../output/report.csv "
@@ -18,9 +20,6 @@ with open(input_path, 'r', newline='', encoding = 'utf-8') as csvfile:
     for row in data_obj:
         data.append(row)
     data = data[1:]
-
-
-
 
 #sort data according to accending order of time and alphabetic order of product name
 data.sort(key=lambda x: (x[0], x[1]))
@@ -33,7 +32,6 @@ year_unique = list(set(year))
 year_unique.sort()
 company = [i[7] for i in data]
 company_unique = list(set(company))
-
 
 
 
@@ -96,11 +94,14 @@ while j < len(report3):
     else:
         j+=1       
 
+report_output = []
+for row in report3:
+    report_output.append(list(row))
 
 #upload report as a csv file to GitHub top most output directory 
 with open(output_path, 'w', newline='') as csvfile:
-    output = csv.writer(csvfile)
-    output.writerow(report3)
+    output = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
+    output.writerows(report3)   
 
 
 
