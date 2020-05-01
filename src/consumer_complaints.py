@@ -108,7 +108,14 @@ while j < len(report3):
 report_output = []
 for row in report3:
     report_output.append(list(row))
-report_output.sort(key=lambda x: (x[0], x[1]))
+report_output.sort(key=lambda x: (x[0], x[1])) 
+
+#covert from year column from string to int
+for row in report_output:
+    row[1] = int(row[1])
+
+
+
 
 #upload report as a csv file to GitHub top most output directory 
 with open(output_path, 'w', newline='') as csvfile:
