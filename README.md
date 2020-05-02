@@ -20,14 +20,25 @@ The python program takes comma separated CSV file as input
   * The input file has to be named complaints.csv and stored in the top-most directory of the repository
   * The input path is included in command line 
 
-Example of the input file can be found [Here](http://files.consumerfinance.gov/ccdb/complaints.csv.zip).
+The input file containing a modest dataset of complaints can be found [Here](http://files.consumerfinance.gov/ccdb/complaints.csv.zip).
 
-Due to the size of the dataset provided in the link, a portion of test was conducted locally using the entire dataset
+Due to the size of the dataset provided in the link, a portion of tests was conducted locally using the entire dataset.
 
+Below are the contents of an example `complaints.csv` file: 
+```
+Date received,Product,Sub-product,Issue,Sub-issue,Consumer complaint narrative,Company public response,Company,State,ZIP code,Tags,Consumer consent provided?,Submitted via,Date sent to company,Company response to consumer,Timely response?,Consumer disputed?,Complaint ID
+2019-09-24,Debt collection,I do not know,Attempts to collect debt not owed,Debt is not yours,"transworld systems inc. is trying to collect a debt that is not mine, not owed and is inaccurate.",,TRANSWORLD SYSTEMS INC,FL,335XX,,Consent provided,Web,2019-09-24,Closed with explanation,Yes,N/A,3384392
+2019-09-19,"Credit reporting, credit repair services, or other personal consumer reports",Credit reporting,Incorrect information on your report,Information belongs to someone else,,Company has responded to the consumer and the CFPB and chooses not to provide a public response,Experian Information Solutions Inc.,PA,15206,,Consent not provided,Web,2019-09-20,Closed with non-monetary relief,Yes,N/A,3379500
+2020-01-06,"Credit reporting, credit repair services, or other personal consumer reports",Credit reporting,Incorrect information on your report,Information belongs to someone else,,,Experian Information Solutions Inc.,CA,92532,,N/A,Email,2020-01-06,In progress,Yes,N/A,3486776
+2019-10-24,"Credit reporting, credit repair services, or other personal consumer reports",Credit reporting,Incorrect information on your report,Information belongs to someone else,,Company has responded to the consumer and the CFPB and chooses not to provide a public response,"TRANSUNION INTERMEDIATE HOLDINGS, INC.",CA,925XX,,Other,Web,2019-10-24,Closed with explanation,Yes,N/A,3416481
+2019-11-20,"Credit reporting, credit repair services, or other personal consumer reports",Credit reporting,Incorrect information on your report,Account information incorrect,I would like the credit bureau to correct my XXXX XXXX XXXX XXXX balance. My correct balance is XXXX,Company has responded to the consumer and the CFPB and chooses not to provide a public response,"TRANSUNION INTERMEDIATE HOLDINGS, INC.",TX,77004,,Consent provided,Web,2019-11-20,Closed with explanation,Yes,N/A,3444592
+```
 
 # Output
-  * The output file has to be named report.csv and stored in the top-most output directory of the repository
-  * There are as many lines as unique pairs of product and year (of `Date received`) in the input file. 
+The python program output comma separated CSV file as output
+* The output file is named report.csv and stored in the top-most output directory of the repository
+* There are as many lines as unique pairs of product and year (of `Date received`) in the input file. 
+
 
 Each line in the output file should list the following fields in the following order:
 * product (name should be written in all lowercase)
