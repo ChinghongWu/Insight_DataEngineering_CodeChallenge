@@ -70,12 +70,12 @@ The **sys** library is used for accessing command line arguments in the python s
 Running the **run.sh** file in project root directory will execute the python script, and produce result in the top-most output directory of repository with the format specified by the challenge.
 
 # Test:
-Test was manually run by placing complaints.csv found in **./insight_testsuite/tests/test_1** to the top-most directory
+Tests were manually run by placing complaints.csv found in the top-most directory.
 
-Another test using the entire dataset provided in [Here](http://files.consumerfinance.gov/ccdb/complaints.csv.zip.) was also carried out in local due to the upload size limit of GitHub. The local test provided useful insight regarding the processing speed of different methods used to solved the problem
+A portion of tests were run using the entire dataset provided in [Here](http://files.consumerfinance.gov/ccdb/complaints.csv.zip.). These tests were carried out in local due to the upload size limit of GitHub. The local test provided useful insight regarding the processing speed of different methods used to solved the problem.
 
 # Contact:
-Feel free to contact [me](https://www.linkedin.com/in/chinghongwu/)
+Feel free to contact [me](https://www.linkedin.com/in/chinghongwu/) 
 
 ## Shell Script: run.sh 
 The run.sh file store in top level of repo is the shell script for executing consumer_complaints.py file. 
