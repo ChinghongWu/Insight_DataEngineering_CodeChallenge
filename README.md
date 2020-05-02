@@ -20,7 +20,7 @@ The python program takes comma separated CSV file as input
   * The input file has to be named complaints.csv and stored in the top-most directory of the repository
   * The input path is included in command line 
 
-Example of the input file can be found [Here](http://files.consumerfinance.gov/ccdb/complaints.csv.zip.)
+Example of the input file can be found [Here](http://files.consumerfinance.gov/ccdb/complaints.csv.zip)
 Due to the size of the dataset provided in the link, a portion of test was conducted locally using the entire dataset
 
 
